@@ -73,5 +73,23 @@ def getDataByName(name):
     }
     return formattedPlayerData
 
+def calculateRating(playerData):
+    rating = 0
+    rating += int(playerData["stars"])
+    rating += int(playerData["moons"])
+    rating += 3*int(playerData["secretCoins"])
+    rating += 3*int(playerData["userCoins"])
+    rating += 10*int(playerData["demons"])
+    rating += 10*int(playerData["easyDemons"])
+    rating += 20*int(playerData["mediumDemons"])
+    rating += 40*int(playerData["hardDemons"])
+    rating += 80*int(playerData["insaneDemons"])
+    rating += 160*int(playerData["extremeDemons"])
+
+    return rating
+
 name = input("Enter someone to search up | ")
-print(getDataByName(name))
+userData = getDataByName(name)
+rating = calculateRating(userData)
+print(userData)
+print(rating)
