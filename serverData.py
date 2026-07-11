@@ -51,7 +51,7 @@ def getDataByName(name):
     try:
         id = int(idData["16"])
     except:
-        return "Player not found. This may be because the player you are searching for does not exist, or it may be because you are not connected to the internet."
+        return "errorCode1"
 
     playerData = getDataByPlayerId(id)
     parsedPlayerData = parseReturnedData(playerData)
