@@ -1,15 +1,35 @@
 import requests
 
-url = "https://www.boomlings.com/database/getGJUserInfo20.php"
+ethanCubesID = 31268368
 
-data = {
-    "secret": "Wmfd2893gb7",
-    "targetAccountId": "31268368"
-}
-headers = {
-    "User-agent": "",
-    "Content-Type": "application/x-www-form-urlencoded"
-}
+def getIDByPlayerName(name):
+    url = "https://www.boomlings.com/database/getGJUsers20.php"
+    data = {
+        "secret": "Wmfd2893gb7",
+        "str": name
+    }
+    headers = {
+        "User-Agent": ""
+    }
+    response = requests.post(url, data=data, headers=headers)
 
-response = requests.post(url, data=data, headers=headers)
-print(response.text)
+    response = response.text
+    return response #16 is id
+
+def getDataByPlayerId(playerID):
+    url = "https://www.boomlings.com/database/getGJUserInfo20.php"
+    data = {
+        "secret": "Wmfd2893gb7",
+        "targetAccountID": playerID
+    }
+    headers = {
+        "User-Agent": "" 
+    }
+
+    response = requests.post(url, data=data, headers=headers)
+    
+    response = response.text
+    return response
+
+# print(getDataByPlayerId(ethanCubesID))
+print(getIDByPlayerName("EthanCubes"))
