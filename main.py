@@ -2,6 +2,16 @@ import requests
 
 ethanCubesID = 31268368
 
+def parseReturnedData(data):
+    parts = data.split(":")
+
+    splitData = {}
+
+    for i in range(1, len(parts), 2):
+        splitData[parts[i-1]] = parts[i]
+    
+    return splitData
+
 def getIDByPlayerName(name):
     url = "https://www.boomlings.com/database/getGJUsers20.php"
     data = {
@@ -31,5 +41,6 @@ def getDataByPlayerId(playerID):
     response = response.text
     return response
 
-# print(getDataByPlayerId(ethanCubesID))
-print(getIDByPlayerName("EthanCubes"))
+user = getIDByPlayerName("EthanCubes")
+print(user)
+print(parseReturnedData(user))
