@@ -60,22 +60,25 @@ def getDataByName(name):
         splitDemons = parsedPlayerData["55"].split(",")
     except:
         splitDemons = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-    formattedPlayerData = {
-        "name": parsedPlayerData["1"],
-        "stars": parsedPlayerData["3"],
-        "moons": parsedPlayerData["52"],
-        "secretCoins": parsedPlayerData["13"],
-        "userCoins": parsedPlayerData["17"],
+    
+    try:
+        formattedPlayerData = {
+            "name": parsedPlayerData["1"],
+            "stars": parsedPlayerData["3"],
+            "moons": parsedPlayerData["52"],
+            "secretCoins": parsedPlayerData["13"],
+            "userCoins": parsedPlayerData["17"],
         
-        "demons": parsedPlayerData["4"],
+            "demons": parsedPlayerData["4"],
 
-        "easyDemons": int(splitDemons[0]) + int(splitDemons[5]),
-        "mediumDemons": int(splitDemons[1]) + int(splitDemons[6]),
-        "hardDemons": int(splitDemons[2]) + int(splitDemons[7]),
-        "insaneDemons": int(splitDemons[3]) + int(splitDemons[8]),
-        "extremeDemons": int(splitDemons[4]) + int(splitDemons[9])
-    }
+            "easyDemons": int(splitDemons[0]) + int(splitDemons[5]),
+            "mediumDemons": int(splitDemons[1]) + int(splitDemons[6]),
+            "hardDemons": int(splitDemons[2]) + int(splitDemons[7]),
+            "insaneDemons": int(splitDemons[3]) + int(splitDemons[8]),
+            "extremeDemons": int(splitDemons[4]) + int(splitDemons[9])
+        }
+    except:
+        return "request blocked"
     return formattedPlayerData
 
 def calculateRating(playerData):
@@ -95,8 +98,3 @@ def calculateRating(playerData):
         return "Error in rating calcuation"
 
     return rating
-    name = input("Enter someone to search up | ")
-    userData = getDataByName(name)
-    rating = calculateRating(userData)
-    print(userData)
-    print(rating)
