@@ -1,7 +1,5 @@
 import requests
 
-ethanCubesID = 31268368
-
 def parseReturnedData(data):
     parts = data.split(":")
 
@@ -21,7 +19,10 @@ def getIDByPlayerName(name):
     headers = {
         "User-Agent": ""
     }
-    response = requests.post(url, data=data, headers=headers)
+    try:
+        response = requests.post(url, data=data, headers=headers)
+    except:
+        return "No internet connection"
 
     response = response.text
     return response #16 is id
@@ -46,7 +47,7 @@ def getDataByName(name):
     try:
         id = int(idData["16"])
     except:
-        return "Player not found"
+        return "Player not found. This may be because the player you are searching for does not exist, or it may be because you are not connected to the internet."
 
     playerData = getDataByPlayerId(id)
     parsedPlayerData = parseReturnedData(playerData)
@@ -75,16 +76,19 @@ def getDataByName(name):
 
 def calculateRating(playerData):
     rating = 0
-    rating += int(playerData["stars"])
-    rating += int(playerData["moons"])
-    rating += 3*int(playerData["secretCoins"])
-    rating += 3*int(playerData["userCoins"])
-    rating += 10*int(playerData["demons"])
-    rating += 10*int(playerData["easyDemons"])
-    rating += 20*int(playerData["mediumDemons"])
-    rating += 40*int(playerData["hardDemons"])
-    rating += 80*int(playerData["insaneDemons"])
-    rating += 160*int(playerData["extremeDemons"])
+    try:
+        rating += int(playerData["stars"])
+        rating += int(playerData["moons"])
+        rating += 3*int(playerData["secretCoins"])
+        rating += 3*int(playerData["userCoins"])
+        rating += 10*int(playerData["demons"])
+        rating += 10*int(playerData["easyDemons"])
+        rating += 20*int(playerData["mediumDemons"])
+        rating += 40*int(playerData["hardDemons"])
+        rating += 80*int(playerData["insaneDemons"])
+        rating += 160*int(playerData["extremeDemons"])
+    except:
+        return "Error in rating calcuation"
 
     return rating
 
