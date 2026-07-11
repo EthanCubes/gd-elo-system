@@ -46,7 +46,6 @@ def getDataByName(name):
     try:
         id = int(idData["16"])
     except:
-        print("Player not found (or you aren't connect to the internet)")
         return "Player not found"
 
     playerData = getDataByPlayerId(id)
