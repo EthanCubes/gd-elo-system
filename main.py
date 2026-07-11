@@ -41,6 +41,32 @@ def getDataByPlayerId(playerID):
     response = response.text
     return response
 
-user = getIDByPlayerName("EthanCubes")
-print(user)
-print(parseReturnedData(user))
+def getDataByName(name):
+    idData = parseReturnedData(getIDByPlayerName(name))
+    id = int(idData["16"])
+
+    playerData = getDataByPlayerId(id)
+    parsedPlayerData = parseReturnedData(playerData)
+
+    splitDemons = parsedPlayerData["55"].split(",")
+    print(splitDemons)
+
+    formattedPlayerData = {
+        "name": parsedPlayerData["1"],
+        "stars": parsedPlayerData["3"],
+        "moons": parsedPlayerData["52"],
+        "secretCoins": parsedPlayerData["13"],
+        "userCoins": parsedPlayerData["17"],
+        
+        "demons": parsedPlayerData["4"],
+
+        "easyDemons": int(splitDemons[0]) + int(splitDemons[5]),
+        "mediumDemons": int(splitDemons[1]) + int(splitDemons[6]),
+        "hardDemons": int(splitDemons[2]) + int(splitDemons[7]),
+        "insaneDemons": int(splitDemons[3]) + int(splitDemons[8]),
+        "extremeDemons": int(splitDemons[4]) + int(splitDemons[9])
+    }
+    return formattedPlayerData
+
+name = input("Enter someone to search up")
+print(getDataByName(name))
