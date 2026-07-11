@@ -68,5 +68,5 @@ def getDataByName(name):
     }
     return formattedPlayerData
 
-name = input("Enter someone to search up")
+name = input("Enter someone to search up | ")
 print(getDataByName(name))
