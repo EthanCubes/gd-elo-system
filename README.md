@@ -5,3 +5,15 @@ A program that assigns a skill rating to Geometry Dash players by the levels the
 
 (link)
 
+## Features
+- A backend that returns fetches user data straight from RobTop's Geometry Dash servers
+- A algorithm that converts the user data returned from RobTop's servers into readable data.
+- Another algorithm that uses the data from RobTop's servers to calculate a skill rating/ELO.
+- A front end that looks nice.
+- A leaderboard of the people with the highest ELO.
+
+## How it works
+
+## Credits
+- GD Colon's video on making his own Geometry Dash website was very entertaining and somewhat informative.
+- [Boomings.dev](boomlings.dev) and []() were great resources 
