@@ -28,6 +28,7 @@ def getIDByPlayerName(name):
     return response #16 is id
 
 def getDataByPlayerId(playerID):
+    # credit to ____ for code
     url = "https://www.boomlings.com/database/getGJUserInfo20.php"
     data = {
         "secret": "Wmfd2893gb7",
@@ -37,7 +38,10 @@ def getDataByPlayerId(playerID):
         "User-Agent": "" 
     }
 
-    response = requests.post(url, data=data, headers=headers)
+    try:
+        response = requests.post(url, data=data, headers=headers)
+    except:
+        return "No internet connection"
     
     response = response.text
     return response
@@ -92,8 +96,9 @@ def calculateRating(playerData):
 
     return rating
 
-name = input("Enter someone to search up | ")
-userData = getDataByName(name)
-rating = calculateRating(userData)
-print(userData)
-print(rating)
+while True:
+    name = input("Enter someone to search up | ")
+    userData = getDataByName(name)
+    rating = calculateRating(userData)
+    print(userData)
+    print(rating)
