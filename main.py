@@ -43,13 +43,19 @@ def getDataByPlayerId(playerID):
 
 def getDataByName(name):
     idData = parseReturnedData(getIDByPlayerName(name))
-    id = int(idData["16"])
+    try:
+        id = int(idData["16"])
+    except:
+        print("Player not found (or you aren't connect to the internet)")
+        return "Player not found"
 
     playerData = getDataByPlayerId(id)
     parsedPlayerData = parseReturnedData(playerData)
 
-    splitDemons = parsedPlayerData["55"].split(",")
-    print(splitDemons)
+    try:
+        splitDemons = parsedPlayerData["55"].split(",")
+    except:
+        splitDemons = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
     formattedPlayerData = {
         "name": parsedPlayerData["1"],
