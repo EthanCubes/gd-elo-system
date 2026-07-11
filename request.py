@@ -95,8 +95,6 @@ def calculateRating(playerData):
         return "Error in rating calcuation"
 
     return rating
-
-while True:
     name = input("Enter someone to search up | ")
     userData = getDataByName(name)
     rating = calculateRating(userData)
