@@ -15,4 +15,4 @@ CORS(app)
 def search():
     name = request.args.get("name")
     playerData, rating = loop.userSearch(name)
-    return jsonify(playerData)
+    return jsonify(playerData, rating)
