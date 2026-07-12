@@ -7,8 +7,12 @@ let playerList;
 search.addEventListener("click", function() {searchPlayer(query.value)});
 lucky.addEventListener("click", function() {getUsers()}); // to make sure that users are loaded before they're processed
 
-function searchPlayer(query) {
-    console.log(query)
+async function searchPlayer(query) {
+    const url = "http://localhost:5000/api/search?name=" + query;
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+    return(data);
 }
 
 function luckySearch() {
