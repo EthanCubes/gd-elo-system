@@ -4,10 +4,11 @@ with open("../assets/demonlist.json") as file:
     data = json.load(file)
 
 def getListPoints(name):
+    print(data)
     try:
-        username = data[name]
+        username = str(data[name])
     except:
-        username = name
+        username = str(name)
     url = "https://api.aredl.net/v2/api/aredl/profile/" + username
     listData = requests.get(url)
     listData = listData.json()
