@@ -1,6 +1,10 @@
-import json, requests
+import json, requests, os
 
-with open("assets/demonlist.json") as file:
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(CURRENT_DIR)
+json_path = os.path.join(BASE_DIR, "assets", "demonlist.json")
+
+with open(json_path, "r") as file:
     data = json.load(file)
 
 def getListPoints(name):
