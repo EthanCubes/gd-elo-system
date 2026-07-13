@@ -1,4 +1,4 @@
-import requests
+import requests, demonlist
 
 def parseReturnedData(data):
     parts = data.split(":")
@@ -61,6 +61,8 @@ def getDataByName(name):
     except:
         splitDemons = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
+    listPoints = demonlist.getListPoints(name)
+
     try:
         formattedPlayerData = {
             "name": parsedPlayerData["1"],
@@ -75,7 +77,9 @@ def getDataByName(name):
             "mediumDemons": int(splitDemons[1]) + int(splitDemons[6]),
             "hardDemons": int(splitDemons[2]) + int(splitDemons[7]),
             "insaneDemons": int(splitDemons[3]) + int(splitDemons[8]),
-            "extremeDemons": int(splitDemons[4]) + int(splitDemons[9])
+            "extremeDemons": int(splitDemons[4]) + int(splitDemons[9]),
+
+            "listPoints": listPoints
         }
     except:
         return "request blocked"
@@ -94,6 +98,9 @@ def calculateRating(playerData):
         rating += 40*int(playerData["hardDemons"])
         rating += 80*int(playerData["insaneDemons"])
         rating += 160*int(playerData["extremeDemons"])
+        if playerData["listPoints"] >= 1:
+            rating *= float(playerData[listPoints]/10)
+        round(rating)
     except:
         return "Error in rating calcuation"
 
