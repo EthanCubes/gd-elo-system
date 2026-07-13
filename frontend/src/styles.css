@@ -4,5 +4,17 @@
 
 body {
     color: white;
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(50, 50, 50);
+}
+
+a {
+    color: white;
+}
+
+footer {
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    transform: translate(0%, -100%);
 }
