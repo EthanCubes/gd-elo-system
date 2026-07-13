@@ -81,9 +81,9 @@ def getDataByName(name):
 
             "listPoints": listPoints
         }
+        return formattedPlayerData
     except:
         return "request blocked"
-    return formattedPlayerData
 
 def calculateRating(playerData):
     rating = 0
@@ -99,7 +99,7 @@ def calculateRating(playerData):
         rating += 80*int(playerData["insaneDemons"])
         rating += 160*int(playerData["extremeDemons"])
         if playerData["listPoints"] >= 1:
-            rating *= float(playerData[listPoints]/10)
+            rating *= float(playerData["listPoints"]/10)
         round(rating)
     except:
         return "Error in rating calcuation"

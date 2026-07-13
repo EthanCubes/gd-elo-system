@@ -13,6 +13,6 @@ def getListPoints(name):
     listData = listData.json()
     try:
         points = round(listData["rank"]["total_points"])
+        return points
     except:
         return 0
-    return points
