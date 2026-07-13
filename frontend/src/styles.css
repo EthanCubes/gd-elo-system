@@ -1,3 +1,8 @@
 #info, #loading {
     display: none;
 }
+
+body {
+    color: white;
+    background-color: rgb(25, 25, 25);
+}
