@@ -1,4 +1,5 @@
-import requests, demonlist
+import requests
+from demonlist import getListPoints
 
 def parseReturnedData(data):
     parts = data.split(":")
@@ -63,7 +64,7 @@ def getDataByName(name):
     except:
         splitDemons = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     
-    listPoints = demonlist.getListPoints(name)
+    listPoints = getListPoints(name)
 
     try:
         formattedPlayerData = {
