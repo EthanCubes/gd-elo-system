@@ -25,7 +25,7 @@ def getIDByPlayerName(name):
         return "No internet connection"
 
     response = response.text
-    return response #16 is id
+    return response
 
 def getDataByPlayerId(playerID):
     # credit to ____ for code
@@ -51,7 +51,7 @@ def getDataByName(name):
     try:
         id = int(idData["16"])
     except:
-        return "errorCode1"
+        return "No internet connection"
 
     playerData = getDataByPlayerId(id)
     parsedPlayerData = parseReturnedData(playerData)
