@@ -12,10 +12,17 @@ search.addEventListener("click", function() {searchPlayer(query.value)});
 lucky.addEventListener("click", function() {getUsers()}); // to make sure that users are loaded before they're processed
 
 async function searchPlayer(query) {
+    loading.innerHTML = "<h1>Loading...</h1>"
     loading.style.display = "block";
     info.style.display = "none";
     const url = "http://localhost:5000/api/search?name=" + query;
-    const response = await fetch(url);
+    try {
+        const response = await fetch(url);
+    }
+    catch {
+        alert("Connection error.")
+        loading.innerHTML = "<h1>Load Failed: Connection error</p><button onclick=\"reloadPage()\">Refresh Page</button>"
+    }
     const data = await response.json();
     playerData = data;
     loading.style.display = "none";
@@ -71,4 +78,8 @@ function updateStats() {
     hardDemons.innerHTML = "Hard Demons: " + playerData[0].hardDemons;
     insaneDemons.innerHTML = "Insane Demons: " + playerData[0].insaneDemons;
     extremeDemons.innerHTML = "Extreme Demons: " + playerData[0].extremeDemons;
+}
+
+function reloadPage() {
+    window.location.reload();
 }
