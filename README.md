@@ -1,7 +1,7 @@
 # GD Elo
 A program that assigns a skill rating to Geometry Dash players by the levels they have completed.
 
-(image)
+![A website with a search bar, captioned GD Elo system](screenshots/Screenshot_20260712_200932.png)
 
 (link)
 
