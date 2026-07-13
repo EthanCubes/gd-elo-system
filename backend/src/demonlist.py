@@ -1,6 +1,6 @@
 import json, requests
 
-with open("../assets/demonlist.json") as file:
+with open("assets/demonlist.json") as file:
     data = json.load(file)
 
 def getListPoints(name):
