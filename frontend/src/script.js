@@ -16,8 +16,9 @@ async function searchPlayer(query) {
     loading.style.display = "block";
     info.style.display = "none";
     const url = "http://localhost:5000/api/search?name=" + query;
+    let response;
     try {
-        const response = await fetch(url);
+        response = await fetch(url);
     }
     catch {
         alert("Connection error.")
