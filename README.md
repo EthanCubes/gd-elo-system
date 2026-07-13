@@ -15,5 +15,6 @@ A program that assigns a skill rating to Geometry Dash players by the levels the
 ## How it works
 
 ## Credits
-- GD Colon's video on making his own Geometry Dash website was very entertaining and somewhat informative.
-- [Boomings.dev](boomlings.dev) and []() were great resources 
+- GD Colon's [video on making his own Geometry Dash website](https://www.youtube.com/watch?v=tC-TZX0AAck) was very entertaining and somewhat informative.
+- [Boomings.dev](https://boomlings.dev) and [GDDocs](https://wyliemaster.github.io/gddocs/#/) were great resources in learning about how to send requests.
+- [AREDL API Documentation](https://api.aredl.net/v2/docs) was helpful in accessing the AREDL API.
