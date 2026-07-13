@@ -13,6 +13,7 @@ A program that assigns a skill rating to Geometry Dash players by the levels the
 - A leaderboard of the people with the highest ELO.
 
 ## How it works
+The client (frontend) sends a request to the server (backend) containing the search query for a user. The backend then sends the name of the user to RobTop's servers, which returns statistics about the user. The username is then also sent to the AREDL API to get list points. The list points and the statistics are calculated into an Elo, which can be from like 1 to several billion probably.The stats and Elo are sent back to the client/frontend to be displayed on a webpage. 
 
 ## Credits
 - GD Colon's [video on making his own Geometry Dash website](https://www.youtube.com/watch?v=tC-TZX0AAck) was very entertaining and somewhat informative.
