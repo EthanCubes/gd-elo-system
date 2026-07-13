@@ -1,5 +1,5 @@
 import requests
-from .demonlist import getListPoints
+from demonlist import getListPoints
 
 def parseReturnedData(data):
     parts = data.split(":")
