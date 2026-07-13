@@ -27,6 +27,7 @@ def getIDByPlayerName(name):
     response = response.text
     return response
 
+
 def getDataByPlayerId(playerID):
     # credit to ____ for code
     url = "https://www.boomlings.com/database/getGJUserInfo20.php"
@@ -45,6 +46,7 @@ def getDataByPlayerId(playerID):
     
     response = response.text
     return response
+
 
 def getDataByName(name):
     idData = parseReturnedData(getIDByPlayerName(name))
@@ -84,6 +86,7 @@ def getDataByName(name):
         return formattedPlayerData
     except:
         return "request blocked"
+
 
 def calculateRating(playerData):
     rating = 0
