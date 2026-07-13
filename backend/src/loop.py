@@ -1,4 +1,4 @@
-from serverData import getDataByName, calculateRating
+from .serverData import getDataByName, calculateRating
 
 def userSearch(name):
     playerData = getDataByName(name)
