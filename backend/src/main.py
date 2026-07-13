@@ -3,8 +3,9 @@ from flask_cors import CORS
 
 from loop import userSearch
 
-app = Flask(__name__)
-CORS(app)
+def create_app():
+    app = Flask(__name__)
+    CORS(app)
 
 @app.route("/api/search")
 def search():
