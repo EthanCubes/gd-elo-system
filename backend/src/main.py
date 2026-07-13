@@ -3,11 +3,6 @@ from flask_cors import CORS
 
 import loop
 
-data = {
-    "game": "geometry dash",
-    "creator": "robtop"
-    }
-
 app = Flask(__name__)
 CORS(app)
 
