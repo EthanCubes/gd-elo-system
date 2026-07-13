@@ -11,3 +11,6 @@ def search():
     name = request.args.get("name")
     playerData, rating = userSearch(name)
     return jsonify(playerData, rating)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
