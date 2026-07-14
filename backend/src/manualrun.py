@@ -1,3 +1,3 @@
-from src.loop import userSearch
+from .loop import userSearch
 
 userSearch("EthanCubes")
