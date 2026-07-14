@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
-from loop import userSearch
+from .loop import userSearch
 
 def create_app():
     app = Flask(__name__)
