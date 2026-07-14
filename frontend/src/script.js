@@ -15,7 +15,7 @@ async function searchPlayer(query) {
     loading.innerHTML = "<h1>Loading...</h1>"
     loading.style.display = "block";
     info.style.display = "none";
-    const url = "http://EthanCubes.pythonanywhere.com/api/search?name=" + query;
+    const url = "http://localhost:5000/api/search?=" + query;
     let response;
     try {
         response = await fetch(url);
