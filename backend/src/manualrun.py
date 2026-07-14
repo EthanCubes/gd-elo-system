@@ -1,3 +1,3 @@
 from .loop import userSearch
 
-userSearch("EthanCubes")
+print(userSearch("EthanCubes"))
