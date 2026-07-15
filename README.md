@@ -24,10 +24,17 @@ The client (frontend) sends a request to the server (backend) containing the sea
 - Git (Version control)
 
 ### Instructions
-- Run ```git clone https://github.com/EthanCubes/gd-elo-system/``` to clone the GitHub repository
-- Run ```cd gd-elo-system/backend/src``` to enter the section of the Git repo where the backend code is stored.
-- Run ```flask --app main run``` to start the backend.
-- Locate the git repo in your file explorer. Enter the folder, then enter the frontend folder, then open index.html to open it in the browser. 
+I'm assuming you are using VSCode in this tutorial.
+- Clone the repository to your device, open with VSCode
+- Open the terminal (Control + `)
+- Run ```cd backend``` to go into the backend folder
+- Run ```cd src``` to go into the source folder inside the backend folder.
+- Run ```flask --app main run``` to start the server on localhost port 5000.
+
+- Now go into the frontend folder (not inside the terminal)
+- Go into the source folder open the script.js.
+- Change the url on line 18 to ```http://localhost:5000/api/search``` (this is necessary to run it fully locally, otherwise the frontend will attempt to fetch data from the backend deployed on MY servers.)
+- Go back into the frontend folder and open index.html. 
 
 
 ## Credits
