@@ -34,3 +34,4 @@ The client (frontend) sends a request to the server (backend) containing the sea
 - GD Colon's [video on making his own Geometry Dash website](https://www.youtube.com/watch?v=tC-TZX0AAck) was very entertaining and somewhat informative.
 - [Boomings.dev](https://boomlings.dev) and [GDDocs](https://wyliemaster.github.io/gddocs/#/) were great resources in learning about how to send requests.
 - [AREDL API Documentation](https://api.aredl.net/v2/docs) was helpful in accessing the AREDL API.
+- I've highkey never done backend web devlopment before, so as much as I hate to admit it, I used AI (specifically DeepSeek, for deployment and hosting of the backend)
