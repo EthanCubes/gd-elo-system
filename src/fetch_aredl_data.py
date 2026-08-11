@@ -20,7 +20,8 @@ def get_list_points(name):
     try:
         username = str(data[name])
     except KeyError:
-        username = str(data[name])
+        username = str(name)
+    print(username)
     url = "https://api.aredl.net/v2/api/aredl/profile/" + username
     list_data = requests.get(url)
     try:
