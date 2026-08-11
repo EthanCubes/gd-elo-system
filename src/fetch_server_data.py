@@ -20,7 +20,7 @@ def get_id_by_player_name(name):
     }
     try:
         response = requests.post(url, data=data, headers=headers)
-    except ConnectionError:
+    except:
         return "No Internet connection"
     
     response = response.text
@@ -37,7 +37,7 @@ def get_data_by_player_id(player_id):
     }
     try:
        response = requests.post(url, data=data, headers=headers)
-    except ConnectionError:
+    except:
         return "No Internet connection"
     response = response.text
     return response
@@ -111,7 +111,7 @@ def get_data_by_name(name):
     try:
         id = int(id_data["16"])
     except:
-        return "PlayerNotFound Error. The player may not exits or you may not be connected to the internet"
+        return "PlayerNotFound Error. The player may not exist or you may not be connected to the internet"
     raw_player_data = get_data_by_player_id(id)
     parsed_player_data = parse_returned_data(raw_player_data)
     converted_data = convert_data(parsed_player_data)

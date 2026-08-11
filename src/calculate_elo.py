@@ -1,4 +1,5 @@
 from fetch_server_data import get_data_by_name
+from fetch_aredl_data import get_list_points
 
 def calculate_elo(name):
     data = get_data_by_name(name)
@@ -19,4 +20,8 @@ def calculate_elo(name):
     rating += 40*int(demons[2]) + 40*int(demons[7])
     rating += 80*int(demons[3]) + 80*int(demons[8])
     rating += 160*int(demons[4]) + 160*int(demons[9])
+    list_points = get_list_points(name)
+    if list_points > 1:
+        rating *= float(list_points)
+    rating = round(rating)
     return rating
