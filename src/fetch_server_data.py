@@ -111,8 +111,7 @@ def get_data_by_name(name):
     try:
         id = int(id_data["16"])
     except:
-        print(4)
-        return "No Internet connection"
+        return "PlayerNotFound Error. The player may not exits or you may not be connected to the internet"
     raw_player_data = get_data_by_player_id(id)
     parsed_player_data = parse_returned_data(raw_player_data)
     converted_data = convert_data(parsed_player_data)
