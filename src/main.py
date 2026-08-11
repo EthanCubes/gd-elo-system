@@ -1,4 +1,5 @@
 from fetch_server_data import get_data_by_name
+from calculate_elo import calculate_elo
 
 def parse_input(input):
     parsed_input = input.split(" ")
@@ -28,7 +29,10 @@ while running:
                     modified_data = data[modifier]
                     print(modified_data)
                 except KeyError:
-                    print(f"Invalid modifier: {modifier}")
+                    if modifier != "elo":
+                        print(f"Invalid modifier: {modifier}")
+                    else:
+                        print(calculate_elo(name))
             else:
                 print(data)
         else:
