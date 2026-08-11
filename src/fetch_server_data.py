@@ -55,7 +55,7 @@ def convert_data(data):
         "10": "color",
         "11": "color2",
         "12": "shipID", # Deprecated, 1.4 and 1.5
-        "13": "secretCoints",
+        "13": "secretCoins",
         "14": "iconType",
         "15": "special",
         "16": "accountID",
