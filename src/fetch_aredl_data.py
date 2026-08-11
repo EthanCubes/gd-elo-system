@@ -21,11 +21,11 @@ def get_list_points(name):
         username = str(data[name])
     except KeyError:
         username = str(name)
-    print(username)
     url = "https://api.aredl.net/v2/api/aredl/profile/" + username
     list_data = requests.get(url)
+    list_data = list_data.json()
     try:
         points = round(list_data["rank"]["total_points"])
         return points
-    except:
-        return 0
+    except KeyError:
+        return 0; # This happens when the user isn't in the AREDL database.
