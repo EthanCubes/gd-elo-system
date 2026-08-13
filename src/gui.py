@@ -25,6 +25,7 @@ def search():
     # Demons
     # List Points
     try:
+        elo = calculate_elo(name)
         stars = data["stars"]
         moons = data["moons"]
         secret_coins = data["secretCoins"]
@@ -34,8 +35,10 @@ def search():
         hard_demons = int(data["demons"][2]) + int(data["demons"][7])
         insane_demons = int(data["demons"][3]) + int(data["demons"][8])
         extreme_demons = int(data["demons"][4]) + int(data["demons"][9])
+        list_points = get_list_points(name)
 
         username_message.config(text=name)
+        elo_message.config(text=str(elo)+" elo")
         stars_message.config(text=str(stars)+" stars")
         moons_message.config(text=str(moons)+" moons")
         secret_coins_message.config(text=str(secret_coins)+" secret coins")
@@ -45,6 +48,7 @@ def search():
         hard_demons_message.config(text=str(hard_demons)+" hard demons")
         insane_demons_message.config(text=str(insane_demons)+" insane demons")
         extreme_demons_message.config(text=str(extreme_demons)+" extreme demons")
+        list_points_message.config(text=str(list_points)+" list points")
     except:
         # the user does not exist in this case
         print("The user does not exits")
@@ -80,6 +84,7 @@ search_button.pack()
 
 # Messages
 username_message = tk.Message(window, text="", width="200")
+elo_message = tk.Message(window, text="", width="200")
 stars_message = tk.Message(window, text="", width="200")
 moons_message = tk.Message(window, text="", width="200")
 secret_coins_message = tk.Message(window, text="", width="200")
@@ -89,8 +94,10 @@ medium_demons_message = tk.Message(window, text="", width="200")
 hard_demons_message = tk.Message(window, text="", width="200")
 insane_demons_message = tk.Message(window, text="", width="200")
 extreme_demons_message = tk.Message(window, text="", width="200")
+list_points_message = tk.Message(window, text="", width="200")
 
 username_message.pack()
+elo_message.pack()
 stars_message.pack()
 moons_message.pack()
 secret_coins_message.pack()
@@ -100,5 +107,6 @@ medium_demons_message.pack()
 hard_demons_message.pack()
 insane_demons_message.pack()
 extreme_demons_message.pack()
+list_points_message.pack()
 
 window.mainloop()
