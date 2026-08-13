@@ -1,0 +1,3 @@
+# Devlog #6
+
+The last time I ported everything over to the new locations without copying because I wanted to reorganize and make the code better, I completely forgot about demonlist integration. So I spent a *while* trying to get the demonlist integration to work. I'm writing this like a day later so I don't really remember what I was struggling with, all I remember is that I forgot to convert the data from server to JSON, and was trying to access data in an incorrect format. And I was just blaming in on the main.py file instead of the fetching file, and yeah I took way too much time solving a problem that didn't need to exist or.

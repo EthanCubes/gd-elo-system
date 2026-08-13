@@ -10,10 +10,9 @@ def calculate_elo(name):
     rating += 3*int(data["usercoins"])
     demons = data["demons"]
     total_demons = 0;
-    # Imma have to write a function to parse this for some reason (or not I can always just write it locally
-    demons = demons.split(",")
     for i in range(10):
         total_demons += int(demons[i])
+    # Imma have to write a function to parse this for some reason (or not I can always just write it locally
     rating += 10*int(total_demons)
     rating += 10*int(demons[0]) + 10*int(demons[5])
     rating += 20*int(demons[1]) + 20*int(demons[6])

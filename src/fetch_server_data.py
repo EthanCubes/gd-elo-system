@@ -104,6 +104,7 @@ def convert_data(data):
     converted_data = {}
     for item in data:
         converted_data[name_list[str(item)]] = data[item]
+    converted_data["demons"] = converted_data["demons"].split(",")
     return converted_data
 
 def get_data_by_name(name):
